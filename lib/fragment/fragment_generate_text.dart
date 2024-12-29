@@ -19,14 +19,6 @@ class _FragmentGenerateTextState extends State<FragmentGenerateText> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 1, 141, 255),
-        title: const Text(
-          'Chat AI',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-      ),
       body: Column(
         children: [
           // Bagian daftar pesan
@@ -79,16 +71,22 @@ class _FragmentGenerateTextState extends State<FragmentGenerateText> {
                     decoration: InputDecoration(
                       hintText: 'Ketik pesan...',
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide.none,
                       ),
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
                 ),
                 const SizedBox(width: 10),
-                CircleAvatar(
-                  // backgroundColor: const Color.fromARGB(255, 1, 141, 255),
+                Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 1, 141, 255),
+                      ),
+                      color: const Color.fromARGB(255, 1, 141, 255)),
                   child: IconButton(
                     icon: isSending
                         ? const CircularProgressIndicator(color: Colors.white)

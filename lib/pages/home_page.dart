@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:uas_app/fragment/fragment_generate_image.dart';
 import 'package:uas_app/fragment/fragment_generate_text.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<HomePage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage>
+class _MainPageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 

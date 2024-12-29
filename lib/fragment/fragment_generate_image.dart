@@ -23,10 +23,6 @@ class _FragmentGenerateImageState extends State<FragmentGenerateImage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ChatBot', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color.fromARGB(255, 1, 141, 255),
-      ),
       body: Column(
         children: [
           Expanded(
@@ -103,7 +99,7 @@ class _FragmentGenerateImageState extends State<FragmentGenerateImage> {
                   child: TextField(
                     controller: textEditingController,
                     decoration: InputDecoration(
-                      hintText: 'Type a message',
+                      hintText: 'Ketik Pesan...',
                       filled: true,
                       fillColor: Colors.grey[200],
                       border: OutlineInputBorder(
@@ -113,11 +109,28 @@ class _FragmentGenerateImageState extends State<FragmentGenerateImage> {
                     ),
                   ),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.send,
+                const SizedBox(width: 10),
+                Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 1, 141, 255),
+                      ),
                       color: const Color.fromARGB(255, 1, 141, 255)),
-                  onPressed: _sendMessage,
-                ),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.send,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    onPressed: _sendMessage,
+                  ),
+                )
+                // IconButton(
+
+                //   icon: const Icon(Icons.send,
+                //       color: const Color.fromARGB(255, 1, 141, 255)),
+                //   onPressed: _sendMessage,
+                // ),
               ],
             ),
           ),
@@ -161,16 +174,20 @@ class _FragmentGenerateImageState extends State<FragmentGenerateImage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                leading: const Icon(Icons.photo),
-                title: const Text('Gallery'),
+                leading: const Icon(
+                  Icons.photo,
+                  color: const Color.fromARGB(255, 1, 141, 255),
+                ),
+                title: const Text('Cari di Gallery'),
                 onTap: () {
                   Navigator.pop(context);
                   _getFromGallery();
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.camera_alt),
-                title: const Text('Camera'),
+                leading: const Icon(Icons.camera_alt,
+                    color: const Color.fromARGB(255, 1, 141, 255)),
+                title: const Text('Ambil Gambar'),
                 onTap: () {
                   Navigator.pop(context);
                   _getFromCamera();
